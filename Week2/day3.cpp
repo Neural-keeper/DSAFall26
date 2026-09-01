@@ -53,16 +53,16 @@ public:
         cout << "Added " << item << " to satchel." << endl;
     }
 
-    // void removeItem(char item) {
-    //     for (auto it = items.begin(); it != items.end(); ++it) {
-    //         if (*it == item) {
-    //             item.erase(it);
-    //             cout << "Removed " << item << " from satchel." << endl;
-    //             return;
-    //         }
-    //     }
-    //     cout << "The item " << item << " was not found in satchel." << endl;
-    // }
+    void removeItem(char item) {
+        for (auto it = items.begin(); it != items.end(); ++it) {
+            if (*it == item) {
+                items.erase(it);
+                cout << "Removed " << item << " from satchel." << endl;
+                return;
+            }
+        }
+        cout << "The item " << item << " was not found in satchel." << endl;
+    }
 
     // vector .empty() method
     void displaySatchel() const {
