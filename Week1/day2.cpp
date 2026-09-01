@@ -28,7 +28,7 @@ class Character {
 /*
 public: anything in the code can access thsse
 private: only this object can access, and "friend" classes can access it
-protected: only this object and its successor (child) can access things here
+protected: only this object and its successor (derived) can access things here
 */
 private:
     string name;
