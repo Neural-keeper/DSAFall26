@@ -117,6 +117,10 @@ public:
         cout << "---" << endl;
     }
 
+    void speak(const string& message) const {
+        cout << "Main Character " << name << " says: " << message << endl;
+    } // overloaded function
+
     void eatFood(int amount) {
         hungerPoints += amount;
         cout << name << " ate food and gained " << amount << " hunger points!" << endl;
