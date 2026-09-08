@@ -17,8 +17,8 @@ using namespace std; // I'd say just use it in your .cpp files, be a little wary
 // 0th, we will define the species in the world -> enumerators
 enum Species {
     ELF,
-    HUMAN,
-    DWARF,
+    HUMAN, 
+    DWARF, 
     UNKNOWN
 }; // also have to end this with a semi colon
 
