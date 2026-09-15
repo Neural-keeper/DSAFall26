@@ -18,6 +18,7 @@ template <typename T>
 class CLinkedList {
 private:
     Node<T>* cursor;
+    // tail and head
     int size = 0;
 
 public:
@@ -32,6 +33,9 @@ public:
     ~CLinkedList() {
         clear(); // clear method will do all of our cleanup
     }
+
+    int getSize() const { return size; }
+    bool isEmpty() const { return {size == 0};}
 
     void insertFront(T val) {
         Node<T>* newNode = new Node<T>(val);
@@ -63,7 +67,6 @@ public:
         }
         size--;
     }
-    int getSize() const { return size; }
 
     void display() const {
         if (cursor == nullptr) {
