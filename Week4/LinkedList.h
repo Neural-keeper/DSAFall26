@@ -87,6 +87,8 @@ public:
 
     int getSize() const { return size; }
     bool isEmpty() const { return size == 0; }
+    Node<T>* getHead() const { return head; } // need for other tasks
+    // view only
 
     void display() {
         Node<T>* current = head;
