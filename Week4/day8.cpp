@@ -121,15 +121,15 @@ On the other side of the room are a series of pillars, all pressed against the w
         increase i
       else:
         pop from top (oldHigh)
-        calculate the width = i if stack empty, else i - oldHigh - 1
-        calculate area min(pillars[oldHigh], i) * width
+        calculate the width = i if stack empty, else i - currentTop - 1
+        calculate area = pillars[oldHigh] * width
         update the maxArea if our area is bigger
 4. return maxarea
 
 */
 #include <iostream>
 #include <vector>
-#include <algorithm> // for min()
+#include <algorithm> // for max()
 #include "StackLL.h"
 
 using namespace std;
