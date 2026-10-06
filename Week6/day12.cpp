@@ -92,6 +92,45 @@ public:
         }
         return leafCount;
     }
+
+    // recursively implement hadPathSum method
+    bool hasPathSum(Skill* skill, int targetSum, int currentSum) {
+        // base case
+        if (skill == nullptr) return false;
+        currentSum += 1;
+        // base case - leaf node
+        if (skill->numChildren == 0) {
+            return currentSum == targetSum; // return true if at leaf, target sum achieved
+        }
+        // look through children recursive call
+        for (Skill* child : skill->children) {
+            if (hasPathSum(child, targetSum, currentSum)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /*
+    target1 = 3
+    
+          A         currentSumA = 1 A return True
+        /   \
+       B     C      currentSumB = 2 B return True
+     /  \
+    D    E          currentSumD = 3 D returns True
+    */
+
+    /*
+    target2 = 5
+    
+          A         currentSumA = 1 A returns False
+        /   \
+       B     C      currentSumB = 2 B returns False -> A looks at C -> currentSumC = 2 C returns false
+     /  \
+    D    E          currentSumD = 3 D returns false -> B looks at E -> currentSumE = 3 E returns false
+    */
+
 }; // skill tree tree
 
 int main() {
@@ -151,6 +190,9 @@ int main() {
     cout << "\n";
     skillTree.printPostorder(elemental);
     
+    cout << "\nNumber of leaf nodes" << skillTree.countLeafNode(skillTree.root) << endl;
+
+    cout << "Is there a path with sum 8? " << (skillTree.hasPathSum(skillTree.root, 8, 0) ? "Yes" : "No") << endl;
 
     return 0;
 }
