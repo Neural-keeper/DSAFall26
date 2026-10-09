@@ -1,3 +1,6 @@
+// UPDATED CODE IN DAY14.CPP, LOOK THERE FOR FULL FUNCTIONAL CODE
+
+
 // an array sorted in ascending order
 /*
 input array = [10, 19, 71, 2, 25, 15, 46, 3]
