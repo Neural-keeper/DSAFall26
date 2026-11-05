@@ -30,6 +30,24 @@ public:
         }
     }
 
+    void addVertex() {
+        numVertices++;
+        for (auto& row : adjacencyMatrix) {
+            row.push_back(0); // Add a new column for the new vertex
+        }
+        adjacencyMatrix.push_back(vector<int>(numVertices, 0)); // Add a new row for the new vertex
+    }
+
+    void removeVertex(int v) {
+        if (v >= 0 && v < numVertices) {
+            adjacencyMatrix.erase(adjacencyMatrix.begin() + v); // Remove the row
+            for (auto& row : adjacencyMatrix) {
+                row.erase(row.begin() + v); // Remove the column
+            }
+            numVertices--;
+        }
+    }
+
     // Check if vertices u and v are adjacent
     bool IsAdjacent(int u, int v) {
         if (u >= 0 && u < numVertices && v >= 0 && v < numVertices) {
@@ -90,6 +108,7 @@ int main() {
     g.AddEdge(1, 2);
     g.AddEdge(2, 3);
     g.AddEdge(3, 0);
+    // g.AddEdge(1, 3);
 
     // Print initial graph
     cout << "Initial graph:" << endl;
